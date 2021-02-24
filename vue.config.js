@@ -1,21 +1,20 @@
+const px2rem = require('postcss-px2rem');
+
 module.exports = {
   css: {
     loaderOptions: {
-      less: {
-        javascriptEnabled: true,
+      css: {},
+      postcss: {
+        plugins: [
+          px2rem({
+            remUnit: 37.5,
+          }),
+        ],
       },
     },
   },
-  // proxy: {
-  //   "/api": {
-  //     target: "https://mallapi.duyiedu.com",
-  //     changeOrigin: true,
-  //     pathRewrite : {
-  //       '^/api' : ''
-  //     }
-  //   }
-  // }
   publicPath: process.env.NODE_ENV === 'production'
     ? '/vue-tt-app/'
     : '/',
-};
+    outputDir:'dosc',
+    }

@@ -1,15 +1,18 @@
 import Vue from 'vue';
-import VCharts from 'v-charts';
+// import Vant from 'vant';
+import { Toast, Dialog } from 'vant';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import './plugins/ant-design-vue';
-import '@/assets/css/reset.less';
-import axios from './axios/axios';
+import 'vant/lib/index.css';
+import 'lib-flexible';
+import axios from './api/axios';
+import './plugins/vant';
 
 Vue.config.productionTip = false;
+Vue.prototype.$Dialog = Dialog;
+Vue.prototype.$Toast = Toast;
 Vue.prototype.$axios = axios;
-Vue.use(VCharts);
 
 new Vue({
   router,
